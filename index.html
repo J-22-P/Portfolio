@@ -151,21 +151,33 @@
 <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-code text-[11px] font-semibold">Production</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant mt-1 mb-4">
-          A suite of web applications that helps importers, exporters and customs brokers prepare, check and submit customs and trade documents, split into frontend and backend microservices.
+          A suite of web applications that helps importers, exporters and customs brokers prepare, check and submit customs and trade documents, split into Next.js frontends and Express backend services.
         </p>
 <!-- Bullet Highlights -->
 <div class="flex flex-col gap-2.5 mb-5 p-3.5 rounded-xl bg-surface-container-low">
 <div class="flex items-start gap-2.5">
 <span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
-<p class="font-body-sm text-body-sm text-on-surface">Import and export declaration forms, including duty, tax and value calculations, weight averaging and rounding rules, saved in one database transaction</p>
+<p class="font-body-sm text-body-sm text-on-surface">Rebuilt duty and tax calculation as a single backend flow, replacing logic duplicated across frontend screens, so every screen and saved declaration uses the same figures; results are saved in one database transaction</p>
 </div>
 <div class="flex items-start gap-2.5">
 <span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
-<p class="font-body-sm text-body-sm text-on-surface">Batch printing, invoice search and filters, and faster large product tables with memoization and fewer re-renders</p>
+<p class="font-body-sm text-body-sm text-on-surface">Extended the calculation rules for specific-rate, anti-dumping and safeguard duties, excise, VAT and rounding, with automatic recalculation when items change</p>
 </div>
 <div class="flex items-start gap-2.5">
 <span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
-<p class="font-body-sm text-body-sm text-on-surface">Master data and customer profile screens together with their backend APIs</p>
+<p class="font-body-sm text-body-sm text-on-surface">Declaration features end to end: duty-compensation forms, short-shipment handling, cost and weight distribution, and XML generation for electronic customs submission</p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
+<p class="font-body-sm text-body-sm text-on-surface">Prevented the same declaration from being submitted twice from two devices by checking the document version and locking it during submission</p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
+<p class="font-body-sm text-body-sm text-on-surface">An Open API that lets external systems add customer products, with request logging</p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
+<p class="font-body-sm text-body-sm text-on-surface">Batch printing of official customs forms, Excel import, invoice search, and master-data screens and APIs for products, BOI certificates and customer profiles</p>
 </div>
 <div class="flex items-start gap-2.5">
 <span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
@@ -178,6 +190,9 @@
 <span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">TypeScript</span>
 <span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">Ant Design</span>
 <span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">Node.js</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">Express</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">PostgreSQL</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">Redis</span>
 <span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">Jenkins</span>
 <span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">Docker</span>
 </div>
