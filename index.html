@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pongsathorn Juntratip · Full-stack Developer</title>
+<meta name="description" content="Pongsathorn Juntratip (J-22-P), full-stack developer in Bangkok working with TypeScript, Next.js, NestJS and Node.js.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#F0F6FC; --line:#D0D7DE; --ink:#0D1117; --muted:#57606A; --soft:#8B949E;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --sans:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0D1117; --surface:#161B22; --line:#30363D; --ink:#F0F6FC; --muted:#8B949E; --soft:#6E7681; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-family:var(--mono);font-weight:700;text-decoration:none;font-size:18px}
+.logo span{color:var(--muted)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+@media (max-width:600px){nav ul{gap:14px;font-size:14px} nav ul li.hide-sm{display:none}}
+
+.hero{padding:96px 0 72px}
+.tag{font-family:var(--mono);font-weight:700;font-size:clamp(48px,11vw,104px);line-height:1;letter-spacing:-2px;margin:0}
+.tag span{color:var(--muted)}
+.hero h1{font-size:clamp(22px,3.4vw,30px);font-weight:500;margin:28px 0 12px;max-width:720px;line-height:1.35}
+.hero p{color:var(--muted);max-width:640px;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{opacity:.85}
+.btn svg{width:18px;height:18px}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+.label{font-family:var(--mono);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+h2{font-size:32px;margin:0 0 32px;line-height:1.2}
+
+.projects{display:grid;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.card header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:10px}
+.card h3{font-size:22px;margin:0}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:0 0 18px;padding-left:20px}
+.card li{margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.chips li{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:0;background:var(--bg)}
+.links{display:flex;gap:18px;margin-top:18px;font-size:15px}
+.links a{font-weight:500;text-underline-offset:4px}
+
+.earlier{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.earlier .card{padding:22px}
+.earlier h3{font-size:18px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 40px}
+.skills h3{font-family:var(--mono);font-size:14px;font-weight:700;margin:0 0 10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+.contact p{color:var(--muted);max-width:560px;margin:0 0 24px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--soft)}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="J-22-P, back to top"><span>&lt;</span>J-22-P<span>/&gt;</span></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li class="hide-sm"><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <p class="tag" aria-hidden="true"><span>&lt;</span>J-22-P<span>/&gt;</span></p>
+      <h1>Hi, I'm Pongsathorn Juntratip, a full-stack developer in Bangkok.</h1>
+      <p>I build web applications end to end: user interfaces, APIs, databases, authentication, background jobs, testing and deployment. Mostly TypeScript, React/Next.js and Node.js.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/J-22-P">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.280-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.090-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="mailto:pongsathorn.junt@gmail.com">Email me</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="wrap">
+      <p class="label">Work</p>
+      <h2>Projects I've worked on</h2>
+      <div class="projects">
+
+        <article class="card">
+          <header>
+            <h3>NOSION</h3>
+            <span class="meta">Personal project · built solo</span>
+          </header>
+          <p>A productivity web app that brings tasks, personal finance and habits into one "Today" page, so you don't have to switch between three apps to see your day.</p>
+          <ul>
+            <li>Designed and built the whole system: Next.js web app, NestJS API, PostgreSQL with Prisma, and a BullMQ worker for reminders</li>
+            <li>Quick capture that turns a plain sentence into a task, expense or habit</li>
+            <li>Email, Google and GitHub sign-in, GitHub issue sync, and a public API with Swagger docs</li>
+            <li>Installable PWA with offline support, light and dark themes, Thai and English</li>
+            <li>Unit, integration and end-to-end tests, with CI/CD on GitHub Actions and deploys to Vercel</li>
+          </ul>
+          <ul class="chips" aria-label="Tech used">
+            <li>Next.js</li><li>NestJS</li><li>PostgreSQL</li><li>Prisma</li><li>Redis</li><li>Playwright</li><li>Turborepo</li>
+          </ul>
+          <div class="links">
+            <a href="https://nosion-staging-web.vercel.app/login">Live demo ↗</a>
+            <a href="https://github.com/J-22-P/nosion">Source ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header>
+            <h3>EzySuite</h3>
+            <span class="meta">Company project · full-stack, team · since Apr 2026</span>
+          </header>
+          <p>A suite of web applications that helps importers, exporters and customs brokers prepare, check and submit customs and trade documents, split into frontend and backend microservices.</p>
+          <ul>
+            <li>Import and export declaration forms, including duty, tax and value calculations, weight averaging and rounding rules, saved in one database transaction</li>
+            <li>Batch printing, invoice search and filters, and faster large product tables with memoization and fewer re-renders</li>
+            <li>Master data and customer profile screens together with their backend APIs</li>
+            <li>A version endpoint on every service with an in-app version popup, and updates to the shared Jenkins and Docker release pipeline</li>
+          </ul>
+          <ul class="chips" aria-label="Tech used">
+            <li>Next.js</li><li>TypeScript</li><li>Ant Design</li><li>Node.js</li><li>Jenkins</li><li>Docker</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header>
+            <h3>HR system and ERP reports</h3>
+            <span class="meta">Internship · Nov 2025 – Mar 2026</span>
+          </header>
+          <p>Internal systems for a company's HR and ERP users, built as part of a small development team.</p>
+          <ul>
+            <li>HR web app screens on both the frontend and the backend: search and list pages, create and edit dialogs, employee history and document review with file download</li>
+            <li>Migrated ERP reports from i-net Clear Reports to open-source JasperReports to cut licence costs, with export to PDF, DOCX, CSV and XLSX</li>
+            <li>Worked from program and business specifications, with Git (GitLab) for version control</li>
+          </ul>
+          <ul class="chips" aria-label="Tech used">
+            <li>Angular</li><li>Quarkus</li><li>Java</li><li>SQL Server</li><li>JasperReports</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="label" style="margin-top:48px">Earlier</p>
+      <div class="earlier">
+        <article class="card">
+          <h3>Environmental risk dashboard</h3>
+          <p>Estimates drought and flood risk from environmental data and compares four ML models.</p>
+          <ul class="chips" aria-label="Tech used"><li>React</li><li>TypeScript</li><li>Recharts</li></ul>
+          <div class="links"><a href="https://github.com/J-22-P/Environmental_Rick_Project">Source ↗</a></div>
+        </article>
+        <article class="card">
+          <h3>READ A ROAD</h3>
+          <p>An online novel platform with separate views for readers, writers and admins.</p>
+          <ul class="chips" aria-label="Tech used"><li>Node.js</li><li>Express</li><li>SQLite</li><li>JWT</li></ul>
+          <div class="links"><a href="https://github.com/J-22-P/Web-Novel---Read-A-Road">Source ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="label">Skills</p>
+      <h2>Tech stack</h2>
+      <div class="skills">
+        <div><h3>Languages</h3><ul class="chips"><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li><li>HTML</li><li>CSS</li></ul></div>
+        <div><h3>Frontend</h3><ul class="chips"><li>React</li><li>Next.js</li><li>Angular</li><li>Tailwind CSS</li><li>Ant Design</li><li>TanStack Query</li><li>Zustand</li></ul></div>
+        <div><h3>Backend</h3><ul class="chips"><li>Node.js</li><li>NestJS</li><li>Express</li><li>Quarkus</li><li>REST APIs</li><li>BullMQ</li></ul></div>
+        <div><h3>Database</h3><ul class="chips"><li>PostgreSQL</li><li>SQL Server</li><li>Prisma</li><li>Redis</li><li>SQLite</li></ul></div>
+        <div><h3>Testing</h3><ul class="chips"><li>Vitest</li><li>Playwright</li><li>Supertest</li></ul></div>
+        <div><h3>DevOps &amp; tools</h3><ul class="chips"><li>Docker</li><li>Jenkins</li><li>GitHub Actions</li><li>GitLab</li><li>Vercel</li><li>Git</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="label">Contact</p>
+      <h2>Let's talk</h2>
+      <p>Open to full-stack and frontend roles. The fastest way to reach me is email.</p>
+      <div class="actions" style="margin-top:0">
+        <a class="btn primary" href="mailto:pongsathorn.junt@gmail.com">pongsathorn.junt@gmail.com</a>
+        <a class="btn" href="https://github.com/J-22-P">github.com/J-22-P</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&lt;J-22-P/&gt; · Pongsathorn Juntratip</div>
+</footer>
+
+</body>
+</html>
