@@ -135,6 +135,29 @@
 <p class="font-body-sm text-body-sm text-on-surface">Unit, integration and end-to-end tests, with CI/CD on GitHub Actions and deploys to Vercel</p>
 </div>
 </div>
+<!-- Key decisions -->
+<div class="flex flex-col gap-3 mb-5 p-3.5 rounded-xl border border-surface-container">
+<div class="flex items-center justify-between gap-2">
+<span class="font-section-eyebrow text-section-eyebrow uppercase tracking-wider text-secondary">Key decisions</span>
+<a class="font-label-code text-[12px] text-accent-blue font-semibold hover:underline" href="https://github.com/J-22-P/nosion/tree/main/docs/adr" rel="noopener noreferrer" target="_blank">Read the ADRs ↗</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-0.5 sm:gap-3">
+<span class="font-label-code text-[11px] font-semibold uppercase tracking-wider text-secondary sm:pt-0.5">Separate API</span>
+<p class="font-body-sm text-body-sm text-on-surface">A NestJS API instead of Next.js API routes, because reminders need a long-running worker with retries that serverless routes cannot give</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-0.5 sm:gap-3">
+<span class="font-label-code text-[11px] font-semibold uppercase tracking-wider text-secondary sm:pt-0.5">Reminders</span>
+<p class="font-body-sm text-body-sm text-on-surface">Stored in PostgreSQL as the source of truth and picked up by a sweeper every minute, so a Redis restart or flush cannot lose a reminder</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-0.5 sm:gap-3">
+<span class="font-label-code text-[11px] font-semibold uppercase tracking-wider text-secondary sm:pt-0.5">Data model</span>
+<p class="font-body-sm text-body-sm text-on-surface">One entries table with a JSONB payload checked by a Zod schema per module: Today, Calendar and Weekly Review read every module in one query, and a new module needs no migration</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-0.5 sm:gap-3">
+<span class="font-label-code text-[11px] font-semibold uppercase tracking-wider text-secondary sm:pt-0.5">Boundaries</span>
+<p class="font-body-sm text-body-sm text-on-surface">Architecture rules enforced as ESLint rules, so a layer violation fails CI; business logic runs without NestJS and the unit suite finishes in about a second</p>
+</div>
+</div>
 <!-- Tech Stack Badges -->
 <div class="flex flex-wrap gap-1.5 mb-5">
 <span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-code text-label-code text-on-surface">Next.js</span>
@@ -158,16 +181,24 @@
 <p class="font-body-md text-body-md text-on-surface-variant mt-1 mb-4">
           A suite of web applications that helps importers, exporters and customs brokers prepare, check and submit customs and trade documents, split into Next.js frontends and Express backend services.
         </p>
+<!-- Case study -->
+<div class="flex flex-col gap-3 mb-4 p-3.5 rounded-xl border border-surface-container">
+<span class="font-section-eyebrow text-section-eyebrow uppercase tracking-wider text-secondary">Case study · Duty and tax calculation</span>
+<div class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-0.5 sm:gap-3">
+<span class="font-label-code text-[11px] font-semibold uppercase tracking-wider text-secondary sm:pt-0.5">Problem</span>
+<p class="font-body-sm text-body-sm text-on-surface">Duty and tax were calculated separately on several frontend screens, so the same declaration could show different figures depending on where you looked</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-0.5 sm:gap-3">
+<span class="font-label-code text-[11px] font-semibold uppercase tracking-wider text-secondary sm:pt-0.5">What I did</span>
+<p class="font-body-sm text-body-sm text-on-surface">Moved the calculation into one backend flow that every screen and every save uses, extended it to specific-rate, anti-dumping and safeguard duties, excise, VAT and rounding, recalculated automatically when items change, and saved the results in a single database transaction</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-0.5 sm:gap-3">
+<span class="font-label-code text-[11px] font-semibold uppercase tracking-wider text-secondary sm:pt-0.5">Result</span>
+<p class="font-body-sm text-body-sm text-on-surface">Every screen and saved declaration now shows the same figures, and a failed save can no longer leave totals out of step with the items</p>
+</div>
+</div>
 <!-- Bullet Highlights -->
 <div class="flex flex-col gap-2.5 mb-5 p-3.5 rounded-xl bg-surface-container-low">
-<div class="flex items-start gap-2.5">
-<span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
-<p class="font-body-sm text-body-sm text-on-surface">Rebuilt duty and tax calculation as a single backend flow, replacing logic duplicated across frontend screens, so every screen and saved declaration uses the same figures; results are saved in one database transaction</p>
-</div>
-<div class="flex items-start gap-2.5">
-<span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
-<p class="font-body-sm text-body-sm text-on-surface">Extended the calculation rules for specific-rate, anti-dumping and safeguard duties, excise, VAT and rounding, with automatic recalculation when items change</p>
-</div>
 <div class="flex items-start gap-2.5">
 <span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
 <p class="font-body-sm text-body-sm text-on-surface">Declaration features end to end: duty-compensation forms, short-shipment handling, cost and weight distribution, batch updates across invoices, and XML generation for electronic customs submission</p>
@@ -182,11 +213,7 @@
 </div>
 <div class="flex items-start gap-2.5">
 <span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
-<p class="font-body-sm text-body-sm text-on-surface">Batch printing of official customs forms, Excel import, invoice search, and master-data screens and APIs for products, BOI certificates and customer profiles</p>
-</div>
-<div class="flex items-start gap-2.5">
-<span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
-<p class="font-body-sm text-body-sm text-on-surface">A version endpoint on every service with an in-app version popup, and updates to the shared Jenkins and Docker release pipeline</p>
+<p class="font-body-sm text-body-sm text-on-surface">Batch form printing, Excel import and master-data screens and APIs, plus a version endpoint on every service and updates to the shared Jenkins and Docker release pipeline</p>
 </div>
 <div class="flex items-start gap-2.5">
 <span class="font-label-code text-accent-green text-label-code font-bold mt-0.5">&gt;</span>
